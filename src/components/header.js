@@ -1,8 +1,14 @@
+// @flow
+
 import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
 import React from 'react'
 
-const Header = ({ siteTitle }) => (
+type SiteInfoType = {
+  siteTitle: String,
+}
+
+const Header = ({ siteTitle }: { siteTitle: SiteInfoType }) => (
   <div
     style={{
       background: `rebeccapurple`,
