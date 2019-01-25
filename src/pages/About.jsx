@@ -1,7 +1,17 @@
+// @flow
+
 import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
 
-const About = ({ data }) => (
+type dataQuery = {
+  site: {
+    siteMetadata: {
+      title: string,
+    },
+  },
+}
+
+const About = ({ data }: { data: dataQuery }) => (
   <StaticQuery
     query={graphql`
       query {
