@@ -29,6 +29,7 @@ const Header = ({ siteTitle }: { siteTitle: SiteInfoType }) => (
         >
           {siteTitle}
         </Link>
+        <Link to="/About">About</Link>
       </h1>
     </div>
   </div>
