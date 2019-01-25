@@ -5,8 +5,26 @@
   </a>
 </p>
 <h1 align="center">
-  Gatsby's default starter
+  Gatsby's default starter with add-ons
 </h1>
+
+Integrated the following with Gatsby default starter:
+
+- Support for [Jest](https://jestjs.io/) & [React Testing Library](https://github.com/kentcdodds/react-testing-library) for Test Driven Development
+- Support for [Flow](https://flow.org/) type
+- Support for [sass](https://sass-lang.com/)
+
+Possibly in the pipline:
+
+- integration with Firestore / CI service...
+- [Gatsby + Netlify functions + Netlift Identity starter](https://www.gatsbyjs.org/starters/sw-yx/jamstack-hackathon-starter/)
+
+Interesting reads:
+[Turning the Static Dynamic: Gatsby + Netlify Functions + Netlify Identity](https://www.gatsbyjs.org/blog/2018-12-17-turning-the-static-dynamic/)
+
+[Understanding the Gatsby lifecycle](https://medium.com/narative/understanding-gatsbys-lifecycle-31c473ba2f2d)
+
+Gatsby's default starter and readme follows:
 
 Kick off your project with this default boilerplate. This starter ships with the main Gatsby configuration files you might need to get up and running blazing fast with the blazing fast app generator for React.
 
