@@ -1,0 +1,16 @@
+{
+    "files.exclude": {
+        ".babelrc": true,
+        ".cache": true,
+        ".eslintrc.js": true,
+        ".flowconfig": true,
+        ".gitignore": true,
+        ".prettierrc": true,
+        ".vscode": true,
+        "jest-preprocess.js": true,
+        "jest.config.js": true,
+        "loadershim.js": true,
+        "node_modules": true,
+        "setup-test-env.js": true
+    }
+}
