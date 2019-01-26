@@ -2,6 +2,7 @@
 
 import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
+import Files from './Files'
 
 type dataQuery = {
   site: {
@@ -11,7 +12,7 @@ type dataQuery = {
   },
 }
 
-const About = ({ data }: { data: dataQuery }) => (
+const SiteTitle = ({ data }: { data: dataQuery }) => (
   <StaticQuery
     query={graphql`
       query {
@@ -24,13 +25,19 @@ const About = ({ data }: { data: dataQuery }) => (
     `}
     render={data => (
       <div>
-        <h3>About</h3>
         <p>{data.site.siteMetadata.title}</p>
       </div>
     )}
   />
 )
 
+const About = () => (
+  <div>
+    <h3>Hello</h3>
+    <SiteTitle />
+    <Files />
+  </div>
+)
 export default About
 
 // export const query = graphql`
