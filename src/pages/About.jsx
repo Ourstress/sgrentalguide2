@@ -16,8 +16,10 @@ type dataQuery = {
 }
 
 type node = {
-  id: string,
-  relativePath: string,
+  node: {
+    id: string,
+    relativePath: string,
+  },
 }
 
 const SiteTitle = data => {

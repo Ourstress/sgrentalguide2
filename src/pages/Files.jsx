@@ -15,8 +15,10 @@ type dataQuery = {
 }
 
 type node = {
-  id: string,
-  relativePath: string,
+  node: {
+    id: string,
+    relativePath: string,
+  },
 }
 
 const Files = (data: dataQuery) => {
