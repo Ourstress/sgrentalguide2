@@ -25,7 +25,7 @@ const Files = (data: dataQuery) => {
   return (
     <div>
       <h3>Files.jsx</h3>
-      {data && <p>{data.allFile.edges[0].node.relativePath}</p>}
+      <p>{data.allFile.edges[0].node.relativePath}</p>
     </div>
   )
 }
