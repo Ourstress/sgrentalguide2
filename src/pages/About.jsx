@@ -10,9 +10,25 @@ type dataQuery = {
       title: string,
     },
   },
+  allFile: {
+    edges: node[],
+  },
 }
 
-const SiteTitle = ({ data }: { data: dataQuery }) => (
+type node = {
+  id: string,
+  relativePath: string,
+}
+
+const SiteTitle = data => {
+  return (
+    <div>
+      <p>{data.site.siteMetadata.title}</p>
+    </div>
+  )
+}
+
+const About = ({ data }: { data: dataQuery }) => (
   <StaticQuery
     query={graphql`
       query {
@@ -21,22 +37,24 @@ const SiteTitle = ({ data }: { data: dataQuery }) => (
             title
           }
         }
+        allFile {
+          edges {
+            node {
+              id
+              relativePath
+            }
+          }
+        }
       }
     `}
     render={data => (
       <div>
-        <p>{data.site.siteMetadata.title}</p>
+        <h3>Hello</h3>
+        <SiteTitle {...data} />
+        <Files {...data} />
       </div>
     )}
   />
-)
-
-const About = () => (
-  <div>
-    <h3>Hello</h3>
-    <SiteTitle />
-    <Files />
-  </div>
 )
 export default About
 
