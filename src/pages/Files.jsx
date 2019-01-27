@@ -3,7 +3,23 @@
 import React from 'react'
 // import { StaticQuery, graphql } from 'gatsby'
 
-const Files = data => {
+type dataQuery = {
+  site: {
+    siteMetadata: {
+      title: string,
+    },
+  },
+  allFile: {
+    edges: node[],
+  },
+}
+
+type node = {
+  id: string,
+  relativePath: string,
+}
+
+const Files = (data: dataQuery) => {
   return (
     <div>
       <h3>Files.jsx</h3>
@@ -11,6 +27,7 @@ const Files = data => {
     </div>
   )
 }
+export default Files
 
 // The query is run in about.js instead
 // const Files = ({ data }: { data: dataQuery }) => (
@@ -35,5 +52,3 @@ const Files = data => {
 //     )}
 //   />
 // )
-
-export default Files
