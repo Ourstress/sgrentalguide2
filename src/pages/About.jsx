@@ -23,11 +23,7 @@ type node = {
 }
 
 const SiteTitle = data => {
-  return (
-    <div>
-      <p>{data.site.siteMetadata.title}</p>
-    </div>
-  )
+  return <div>{data && <p>{data.site.siteMetadata.title}</p>}</div>
 }
 
 const About = ({ data }: { data: dataQuery }) => (
