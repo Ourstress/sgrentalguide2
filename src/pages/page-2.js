@@ -37,6 +37,9 @@ const SecondPage = ({ data }: { data: dataQuery }) => (
                 title
                 date(formatString: "DD MMMM, YYYY")
               }
+              fields {
+                slug
+              }
               excerpt
             }
           }
@@ -50,7 +53,9 @@ const SecondPage = ({ data }: { data: dataQuery }) => (
         <h4>{data.allMarkdownRemark.totalCount} Posts</h4>
         {data.allMarkdownRemark.edges.map(({ node }) => (
           <div key={node.id}>
-            <h3>{node.frontmatter.title}</h3>
+            <Link to={node.fields.slug}>
+              <h3>{node.frontmatter.title}</h3>
+            </Link>
             <p>{node.excerpt}</p>
           </div>
         ))}
