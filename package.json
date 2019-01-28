@@ -6,7 +6,7 @@
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
     "acorn": "^6.0.5",
-    "gatsby": "^2.0.98",
+    "gatsby": "^2.0.90",
     "gatsby-image": "^2.0.28",
     "gatsby-plugin-flow": "^1.0.2",
     "gatsby-plugin-manifest": "^2.0.13",
