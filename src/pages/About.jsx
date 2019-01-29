@@ -5,24 +5,27 @@ import { StaticQuery, graphql } from 'gatsby'
 import Files from '../components/Files'
 
 type dataQuery = {
-  site: {
-    siteMetadata: {
-      title: string,
-    },
-  },
-  allFile: {
-    edges: node[],
-  },
+  site: siteObject,
+  allFile: allFileObject,
 }
-
+type siteObject = {
+  siteMetadata: siteMetadataObject,
+}
+type siteMetadataObject = {
+  title: string,
+}
+type allFileObject = {
+  edges: nodeObject[],
+}
+type nodeObject = {
+  node: node,
+}
 type node = {
-  node: {
-    id: string,
-    relativePath: string,
-  },
+  id: string,
+  relativePath: string,
 }
 
-const SiteTitle = data => {
+const SiteTitle = (data: dataQuery) => {
   return (
     <div>
       <p>{data.site.siteMetadata.title}</p>
@@ -30,7 +33,7 @@ const SiteTitle = data => {
   )
 }
 
-const About = ({ data }: { data: dataQuery }) => (
+const About = ({ data: dataQuery }) => (
   <StaticQuery
     query={graphql`
       query {

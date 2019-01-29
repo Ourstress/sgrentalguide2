@@ -1,16 +1,11 @@
 // @flow
 
 import { Link } from 'gatsby'
-import PropTypes from 'prop-types'
 import React from 'react'
 
 import styles from './header.module.scss'
 
-type SiteInfoType = {
-  siteTitle: String,
-}
-
-const Header = ({ siteTitle }: { siteTitle: SiteInfoType }) => (
+const Header = ({ siteTitle }: { siteTitle: string }) => (
   <div className={styles.header}>
     <div
       style={{
@@ -34,13 +29,5 @@ const Header = ({ siteTitle }: { siteTitle: SiteInfoType }) => (
     </div>
   </div>
 )
-
-// Header.propTypes = {
-//   siteTitle: PropTypes.string,
-// }
-
-// Header.defaultProps = {
-//   siteTitle: ``,
-// }
 
 export default Header

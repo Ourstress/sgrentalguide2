@@ -9,5 +9,14 @@
       }
     ]
   ],
-  "plugins": ["transform-flow-strip-types"]
+  "plugins": [
+    "transform-flow-strip-types",
+    [
+      "flow-runtime",
+      {
+        "assert": true,
+        "annotate": true
+      }
+    ]
+  ]
 }

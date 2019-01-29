@@ -9,22 +9,22 @@ import SEO from '../components/seo'
 type dataQuery = {
   allMarkdownRemark: {
     totalCount: number,
-    edges: node[],
+    edges: nodeObject[],
   },
 }
-type node = {
-  node: {
-    id: string,
-    frontmatter: frontmatter,
-    excerpt: string,
-  },
+type nodeObject = { node: nodeContent }
+
+type nodeContent = {
+  id: string,
+  frontmatter: frontmatter,
+  excerpt: string,
 }
 type frontmatter = {
   title: string,
   date: string,
 }
 
-const SecondPage = ({ data }: { data: dataQuery }) => (
+const SecondPage = ({ data: dataQuery }) => (
   <StaticQuery
     query={graphql`
       query {
