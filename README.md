@@ -7,7 +7,7 @@
 <h1 align="center">
   Gatsby's default starter with add-ons
 </h1>
-[![pipeline status](https://gitlab.com/Ourstress/sgrentalguide2/badges/master/build.svg)](	https://img.shields.io/gitlab/pipeline/ourstress/sgrentalguide2.svg)
+[![Build status](https://gitlab.com/Ourstress/sgrentalguide2/badges/master/build.svg)](	https://img.shields.io/gitlab/pipeline/ourstress/sgrentalguide2.svg)
 
 Integrated the following with Gatsby default starter:
 
