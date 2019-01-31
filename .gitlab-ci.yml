@@ -1,0 +1,26 @@
+# The CI platform uses Docker images/containers,
+# so image: node:latest tells the CI to use the latest node image
+image: node:latest
+
+# caches the node_modules folder in between builds,
+# so subsequent builds should be a lot faster as it doesn’t have to reinstall all the dependencies required.
+# This folder is cached between builds
+# http://docs.gitlab.com/ce/ci/yaml/README.html#cache
+cache:
+  paths:
+    - node_modules/
+
+pages:
+  # script tells CI server it to start running the below scripts inside the image selected.
+  script:
+    # install all dependencies
+    - npm install
+    # run tests
+    - npm test
+    # start the static site build
+    - ./node_modules/.bin/gatsby build --prefix-paths
+  artifacts:
+    paths:
+      - public
+  only:
+    - master

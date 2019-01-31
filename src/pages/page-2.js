@@ -18,10 +18,14 @@ type nodeContent = {
   id: string,
   frontmatter: frontmatter,
   excerpt: string,
+  fields: fields,
 }
 type frontmatter = {
   title: string,
   date: string,
+}
+type fields = {
+  slug: string,
 }
 
 const SecondPage = ({ data }: { data: dataQuery }) => (
