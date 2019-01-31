@@ -1,3 +1,5 @@
+[![Build status](https://img.shields.io/gitlab/pipeline/ourstress/sgrentalguide2.svg)](https://gitlab.com/Ourstress/sgrentalguide2/pipelines)
+
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
   <a href="https://www.gatsbyjs.org">
@@ -7,7 +9,6 @@
 <h1 align="center">
   Gatsby's default starter with add-ons
 </h1>
-[![Build status](https://gitlab.com/Ourstress/sgrentalguide2/badges/master/build.svg)](	https://img.shields.io/gitlab/pipeline/ourstress/sgrentalguide2.svg)
 
 Integrated the following with Gatsby default starter:
 
