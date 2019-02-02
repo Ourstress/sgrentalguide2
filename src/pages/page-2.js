@@ -11,6 +11,10 @@ type dataQuery = {
     totalCount: number,
     edges: nodeObject[],
   },
+  allAirtable: {
+    totalCount: number,
+    edges: airtableNodeObject[],
+  },
 }
 type nodeObject = { node: nodeContent }
 
@@ -28,6 +32,17 @@ type fields = {
   slug: string,
 }
 
+type airtableNodeObject = {
+  node: airtableNodeField,
+}
+type airtableNodeField = {
+  id: string,
+  data: airtableDataField,
+}
+type airtableDataField = {
+  Slug: string,
+  Name: string,
+}
 const SecondPage = ({ data }: { data: dataQuery }) => (
   <Layout>
     <SEO title="Pandas" />
@@ -39,6 +54,14 @@ const SecondPage = ({ data }: { data: dataQuery }) => (
           <h3>{node.frontmatter.title}</h3>
         </Link>
         <p>{node.excerpt}</p>
+      </div>
+    ))}
+    <h4>{data.allAirtable.totalCount} Posts</h4>
+    {data.allAirtable.edges.map(({ node }) => (
+      <div key={node.id}>
+        <Link to={node.data.Slug}>
+          <h3>{node.data.Name}</h3>
+        </Link>
       </div>
     ))}
     <Link to="/">Go back to the homepage</Link>
@@ -61,6 +84,18 @@ export const query = graphql`
             slug
           }
           excerpt
+        }
+      }
+    }
+    allAirtable {
+      totalCount
+      edges {
+        node {
+          id
+          data {
+            Slug
+            Name
+          }
         }
       }
     }

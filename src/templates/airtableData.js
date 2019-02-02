@@ -15,7 +15,7 @@ export default ({ data }) => {
 }
 
 export const query = graphql`
-  query {
+  query($slug: String!) {
     airtable(data: { Slug: { eq: $slug } }) {
       data {
         Notes
