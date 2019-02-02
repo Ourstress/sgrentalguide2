@@ -42,3 +42,30 @@ exports.createPages = ({ graphql, actions }) => {
     })
   })
 }
+
+exports.createPages = ({ graphql, actions }) => {
+  const { createPage } = actions
+  return graphql(`
+    {
+      allAirtable {
+        edges {
+          node {
+            data {
+              Slug
+            }
+          }
+        }
+      }
+    }
+  `).then(result => {
+    result.data.allAirtable.edges.forEach(({ node }) => {
+      createPage({
+        path: node.data.Slug,
+        component: path.resolve(`./src/templates/airtableData.js`),
+        context: {
+          slug: node.data.Slug,
+        },
+      })
+    })
+  })
+}
