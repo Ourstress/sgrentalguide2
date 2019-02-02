@@ -1,8 +1,9 @@
 // @flow
 
 import React from 'react'
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 import Files from '../components/Files'
+import Counter from '../components/random/Counter'
 
 type dataQuery = {
   site: siteObject,
@@ -38,6 +39,8 @@ const About = ({ data }: { data: dataQuery }) => (
     <h3>Hello</h3>
     <SiteTitle {...data} />
     <Files {...data} />
+    <Counter />
+    <Link to="/">Back to HomePage </Link>
   </div>
 )
 export default About
