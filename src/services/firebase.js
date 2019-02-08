@@ -1,4 +1,9 @@
+import React from 'react'
 import app from 'firebase/app'
+import 'firebase/auth' // import auth package from firebase
+
+const FirebaseContext = React.createContext(null)
+
 // Initialize Firebase
 const config = {
   apiKey: process.env.GATSBY_FIREBASE_APIKEY,
@@ -12,6 +17,13 @@ const config = {
 class Firebase {
   constructor() {
     app.initializeApp(config)
+    this.auth = app.auth() // Instantiate auth package
+    this.uiConfig = {
+      // configure FirebaseUI
+      signInFlow: 'popup',
+      signInOptions: [app.auth.GoogleAuthProvider.PROVIDER_ID],
+    }
   }
 }
 export default Firebase
+export { FirebaseContext }
