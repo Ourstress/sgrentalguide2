@@ -16,12 +16,14 @@ const config = {
 
 class Firebase {
   constructor() {
-    app.initializeApp(config)
-    this.auth = app.auth() // Instantiate auth package
-    this.uiConfig = {
-      // configure FirebaseUI
-      signInFlow: 'popup',
-      signInOptions: [app.auth.GoogleAuthProvider.PROVIDER_ID],
+    if (typeof window !== 'undefined') {
+      app.initializeApp(config)
+      this.auth = app.auth() // Instantiate auth package
+      this.uiConfig = {
+        // configure FirebaseUI
+        signInFlow: 'popup',
+        signInOptions: [app.auth.GoogleAuthProvider.PROVIDER_ID],
+      }
     }
   }
 }
